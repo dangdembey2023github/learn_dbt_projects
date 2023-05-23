@@ -8,9 +8,12 @@ models:
           - name: id
             description: "The primary key for this table"
             tests:
-                - unique
                 - not_null
-
+                - unique:
+                    config:
+                      severity: error
+                      error_if: ">1000"
+                      warn_if: ">10"
     - name: my_second_dbt_model
       description: "A starter dbt model"
       columns:
