@@ -5,11 +5,13 @@ models:
     tests:
       - dbt_utils.expressions_is_true:
           expression: "amount > 5"
+
     columns:
       - name: order_id
         tests:
           - unique
           - not_null
+
       - name: amount
         tests:
           - assert_column_is_greater_than_five

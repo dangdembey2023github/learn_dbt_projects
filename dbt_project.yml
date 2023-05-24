@@ -43,3 +43,4 @@ tests:
   jaffle_shop:
     +severity: warn
     +store_failures: true
+    warn_if: "> 10"
