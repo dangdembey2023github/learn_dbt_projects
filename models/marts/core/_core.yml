@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: fct_orders
+    tests:
+      - dbt_utils.expressions_is_true:
+          expression: "amount > 5"
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: amount
+        tests:
+          - assert_column_is_greater_than_five
+          - dbt_expectations.expect_column_value_to_be_between:
+              min_value: 5
+              row_condition: "order_id is not null"
+              strictly: True
