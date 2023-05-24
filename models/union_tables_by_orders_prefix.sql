@@ -1,3 +1,8 @@
+{{
+    config(
+        enabled=false
+    )
+}}
 {{ union_tables_by_prefix(
 
       database='raw',
