@@ -1,11 +1,6 @@
-{{
-    config(
-        enabled=False
-    )
-}}
 {% snapshot mock_orders %}
 
-{% set new_schema = target.schema + '_snapshot' %}
+{% set new_schema = target.schema+'_snapshot' %}
 
 {{
     config(
